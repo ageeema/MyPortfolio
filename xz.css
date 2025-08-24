@@ -1,0 +1,398 @@
+/* ===============================
+   General Body
+=============================== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background:black;
+  /* Removed background to let main BG show */
+}
+
+/* ===============================
+   Loader Styles
+=============================== */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease, visibility 1s ease;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('Loading Background.png') no-repeat center center / cover;
+}
+
+#loader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Particles full screen */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Loader text */
+.loader-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading-text {
+  font-family: 'Lobster', cursive;
+  font-size: 4em;
+  margin-bottom: 20px;
+  color: #f0f0f0;
+  text-shadow: 0 0 20px #ff6fff, 0 0 40px #6affff;
+}
+
+/* Dots */
+#dots span {
+  font-size: 3em;
+  font-weight: bold;
+  color: #6affff;
+  text-shadow: 0 0 15px #ff6fff, 0 0 30px #6affff;
+  margin: 0 8px;
+  display: inline-block;
+  animation: bounce 1.2s infinite, glow 2s infinite alternate;
+}
+#dots span:nth-child(2) { animation-delay: 0.2s, 0.2s; }
+#dots span:nth-child(3) { animation-delay: 0.4s, 0.4s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+}
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 15px #6affff, 0 0 30px #ff6fff; }
+  50% { text-shadow: 0 0 25px #6affff, 0 0 50px #ff6fff; }
+}
+
+/* ===============================
+   Fullscreen particle background behind main content
+=============================== */
+#particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Main content above particles */
+#main-content {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+  background: url('Background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+#main-content.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===============================
+   Intro Section
+=============================== */
+#intro-section {
+  height: auto;
+  min-height: 60vh;
+  padding: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background: url('Background.jpg') no-repeat center center / cover;
+}
+
+.intro-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 80px;
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+}
+
+.intro-pic img {
+  width: 400px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px #6affff,
+              0 0 20px #6affff,
+              0 0 30px #ff6fff,
+              0 0 40px #ff6fff;
+  border: 4px solid #6affff;
+  transition: all 0.3s ease;
+}
+.intro-pic img:hover {
+  box-shadow: 0 0 15px #6affff,
+              0 0 30px #6affff,
+              0 0 45px #ff6fff,
+              0 0 60px #ff6fff;
+  transform: scale(1.05);
+}
+
+.intro-text h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 5em;
+  font-weight: bold;
+  color: #6affff;
+  text-shadow: 0 0 5px #6affff,
+               0 0 10px #6affff,
+               0 0 20px #ff6fff,
+               0 0 40px #ff6fff,
+               0 0 60px #ff6fff;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.intro-text p {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-top: 0;
+  text-shadow: 0 0 5px #6affff, 0 0 10px #ff6fff;
+}
+
+/* ===============================
+   Sections Styling
+=============================== */
+section {
+  padding:0 20px ; /* tighter spacing */
+  margin: 0;
+  text-align: center;
+  background: transparent;
+}
+
+#about, #projects, #skills, #contact {
+  background: transparent;
+  color: #f5f5f5;
+}
+#about {
+  padding: 0 20px; /* only left/right padding, no top/bottom */
+}
+
+
+section h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #6affff, 0 0 20px #ff6fff;
+}
+/* Neon About Me Heading */
+#about h2 {
+  font-size: 3.5em;
+  color: #6affff; /* base neon color */
+  text-align: center;
+    margin-top: 0;      /* remove top margin */
+  margin-bottom: 10px;
+  text-shadow: 
+    0 0 5px #6affff,
+    0 0 10px #6affff,
+    0 0 20px #ff6fff,
+    0 0 40px #ff6fff,
+    0 0 60px #6affff,
+    0 0 80px #ff6fff;
+  animation: neon-flicker 2s infinite alternate;
+  font-family: 'Lobster', cursive; /* playful, glowing vibe */
+}
+
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 
+      0 0 5px #6affff,
+      0 0 10px #6affff,
+      0 0 20px #ff6fff,
+      0 0 40px #ff6fff,
+      0 0 60px #6affff,
+      0 0 80px #ff6fff;
+  }
+  20%, 24%, 55% {
+    text-shadow: none; /* flicker effect */
+  }
+}
+
+/* About Me Paragraph Neon Style */
+#about p {
+  font-size: 1.5em; /* increased from 1.2em */
+  color: #00ffff; /* neon cyan */
+  text-shadow: 
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+  line-height: 1.8;
+  max-width: 900px;
+margin: 20px auto; /* centers block horizontally */
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Optional hover effect for extra glow */
+#about p:hover {
+  text-shadow: 
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff,
+    0 0 50px #00ffff;
+}
+
+
+#skills h2 {
+  font-family: 'Lobster', cursive;
+  font-size: 3em;
+  color: #00ffff; /* cyan neon */
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff,
+    0 0 60px #00ffff;
+  margin-bottom: 20px;
+}
+
+#skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+#skills li {
+  background: rgba(0, 255, 255, 0.1); /* translucent cyan */
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #00ffff;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+#skills li:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 15px #00ffff,
+    0 0 30px #00ffff,
+    0 0 45px #00ffff;
+}
+
+/* ===============================
+   Projects
+=============================== */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  margin: 20px auto;
+  padding: 30px;
+  max-width: 700px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255,0.1);
+}
+
+.project-card h3 {
+  color: #6affff;
+}
+
+.project-card a {
+  color: #ff6fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   Contact
+=============================== */
+#contact a {
+  color: #ff6fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   Fade-in animation
+=============================== */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===============================
+   Responsive
+=============================== */
+@media(max-width:768px) {
+  .intro-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .intro-pic img {
+    width: 250px;
+  }
+
+  .intro-text h1 {
+    font-size: 2.5em;
+  }
+
+  .intro-text p {
+    font-size: 1.2em;
+  }     
+}
