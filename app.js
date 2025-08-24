@@ -1,20 +1,19 @@
-// Initialize particles.js with default size for loader
-particlesJS("particles-js", {
-  "particles": {
-    "number": { "value": 150, "density": { "enable": true, "value_area": 800 } },
-    "color": { "value": ["#6affff","#ff6fff"] },
-    "shape": { "type": "circle" },
-    "opacity": { "value": 0.8, "random": true },
-    "size": { "value": 4, "random": true }, // default size
-    "line_linked": { "enable": true, "distance": 120, "color": "#ffffff", "opacity": 0.2, "width": 1 },
-    "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "bounce": false }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": { "onhover": { "enable": true, "mode": "repulse" } },
-    "modes": { "repulse": { "distance": 100 } }
-  },
-  "retina_detect": true
+particlesJS("particles-js",{
+"particles": {
+"number": { "value": 150,"density": { "enable": true, "value_area": 800 } },
+"color": { "value": ["#6affff","#ff6fff"] },
+"shape": {"type":"circle"},
+"opacity": { "value": 0.8, "random": true },
+"size": { "value": 4, "random": true }, // default size
+"line_linked": { "enable": true, "distance": 120, "color": "#ffffff", "opacity": 0.2, "width": 1 },
+"move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "bounce": false }
+},
+"interactivity": {
+"detect_on": "canvas",
+"events": { "onhover": { "enable": true, "mode": "repulse" } },
+"modes": { "repulse": { "distance": 100 } }
+},
+ "retina_detect": true
 });
 // ===============================
 // Initialize particles for main screen
@@ -42,10 +41,10 @@ particlesJS("about-particles", {
     "number": { "value": 30, "density": { "enable": true, "value_area": 500 } },
     "color": { "value": ["#6affff","#ff6fff"] },
     "shape": { "type": "circle" },
-    "opacity": { "value": 0.5, "random": true },
-    "size": { "value": 3, "random": true },
-    "line_linked": { "enable": false },
-    "move": { "enable": true, "speed": 1, "random": true }
+"opacity": { "value": 0.5, "random": true },
+"size": { "value": 3, "random": true },
+"line_linked": { "enable": false },
+"move": { "enable": true, "speed": 1, "random": true }
   },
   "interactivity": { "detect_on": "canvas" },
   "retina_detect": true
@@ -82,22 +81,19 @@ setTimeout(() => {
     loader.style.display = 'none';
     mainContent.classList.add('show');
     document.body.classList.remove("no-scroll");
-    typeHeadline(); // start intro headline typing
+    typeHeadline();
   }, { once: true });
 }, loaderDuration);
 
-// ===============================
-// Intro Headline Typewriter
-// ===============================
 const headline = document.getElementById("headline");
 const headlineText = "B.Tech CSE Student at UPES,Dehradun | ACM Technical Core Member | Exploring AI and Web Development";
 let headlineIndex = 0;
 
 function typeHeadline(){
-  if(headlineIndex < headlineText.length){
-    headline.textContent += headlineText.charAt(headlineIndex);
-    headlineIndex++;
-    setTimeout(typeHeadline, 70); // typing speed
+if(headlineIndex < headlineText.length){
+ headline.textContent += headlineText.charAt(headlineIndex);
+headlineIndex++;
+setTimeout(typeHeadline, 70); // typing speed
   }
 }
 

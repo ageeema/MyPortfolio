@@ -1,88 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agrima's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agrima's Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="xz.css">
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="xz.css">
-
-  <!-- Particles.js library -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
-<body class="no-scroll">
-
-  <!-- Loader -->
-  <div id="loader">
-    <div id="particles-js"></div>
-    <div class="loader-content">
-      <div id="loading-text"></div>
-      <div id="dots"><span>.</span><span>.</span><span>.</span></div>
-    </div>
-  </div>
+<body class="no-scroll"> 
+<div id="loader">
+<div id="particles-js"></div>
+<div class="loader-content">
+<div id="loading-text"></div>
+<div id="dots"><span>.</span><span>.</span><span>.</span></div>
+</div>
+</div>
 <div id="particles-bg"></div>
-  <!-- Main Content -->
-  <div id="main-content">
-    <!-- Intro Section -->
-    <section id="intro-section">
-      <div class="intro-container">
-        <div class="intro-pic">
-          <img src="agrima.png" alt="Agrima Kukreti">
-        </div>
-        <div class="intro-text">
-          <h1>AGRIMA KUKRETI</h1>
-          <p id="headline"></p>
-        </div>
-      </div>
-    </section>
+<div id="main-content">
+<section id="intro-section">
+<div class="intro-container">
+<div class="intro-pic">
+<img src="agrima.png" alt="Agrima Kukreti">
+</div>
+<div class="intro-text">
+<h1>AGRIMA KUKRETI</h1>
+<p id="headline"></p>
+</div>
+</div>
+</section>
+<section id="about">
+<div id="about-particles"></div>
+<h2>About Me</h2>
+<p>Hey there! Agrima here, a B.Tech CSE student at UPES Dehradun. Nowadays, I’ve been diving deep into web development and exploring AI —both really excite me. Cybersecurity fascinates me too , because a website without protection? Hell no!  I’m naturally curious , a little (okay, maybe a lot 😅) of an overthinker, love solving problems , and enjoy pushing the boundaries of what technology can do🚀</p>
+</section>
+<section id="skills">
+<h2>Skills</h2>
+<ul>
+<li>C</li>
+<li>Java</li>
+<li>Python</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ul>
+</section>
+<section id="projects">
+<h2>Projects</h2>
+<div class="project-card">
+<h3>Phishing URL Detector (Java)</h3>
+<p>Created a basic Java program to detect potentially harmful phishing URLs. Used rule-based logic to flag suspicious links with patterns like IP addresses, special characters, and phishing-related keywords.</p>
+</div>
+<div class="project-card">
+<h3>Student Grade Management System (Java)</h3>
+<p>Built a console-based Java application to manage student marks, calculate average scores, and assign grades. Applied object-oriented programming concepts like classes, methods, and arrays.</p>
+</div>
+<div class="project-card">
+<h3>Number Guessing Game (Java)</h3>
+<p>Built an interactive console-based game using Java that allows users to guess a randomly generated number with hints provided. Practiced loops, conditionals, and random number generation.</p>
+</div>
+<div class="project-card">
+<h3>Portfolio Website</h3>
+<p>Designed and developed a personal portfolio website using HTML, CSS, and JavaScript with custom animations, responsive design, and neon styling. Hosted using Vercel/GitHub Pages for easy access and updates.</p>
+</div>
+</section>
+<section id="contact">
+  <p class="contact-subtitle">✨ Let’s Connect! ✨</p>
 
-    <!-- About Section -->
-    <section id="about">
-      <div id="about-particles"></div>
-      <h2>About Me</h2>
-      <p>"Hey there! Agrima here, a B.Tech CSE student at UPES Dehradun. Nowadays, I’ve been diving deep into web development and exploring AI —both really excite me. Cybersecurity fascinates me too , because a website without protection? Hell no!  I’m naturally curious , a little (okay, maybe a lot 😅) of an overthinker, love solving problems , and enjoy pushing the boundaries of what technology can do 🚀</p>
-    </section>
-
-    <section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>C</li>
-    <li>Java</li>
-    <li>Python</li>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-  </ul>
+  <div class="contact-links">
+    <a href="mailto:kukretiagrima08@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/agrima-kukreti-4b181832a" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/ageeema" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.instagram.com/agrimakukreti._" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
 </section>
 
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>This very portfolio website built using HTML, CSS, and JS. <a href="#">View on GitHub</a></p>
-      </div>
-      <div class="project-card">
-        <h3>AI Prediction Game</h3>
-        <p>A fun project where the system tries to predict your choices. <a href="#">View on GitHub</a></p>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:agrima@example.com">agrima@example.com</a></p>
-      <p>GitHub: <a href="#">github.com/agrima</a></p>
-      <p>LinkedIn: <a href="#">linkedin.com/in/agrima</a></p>
-    </section>
-  </div>
-
-  <!-- JS -->
-  <script src="app.js"></script>
+</div>
+<script src="app.js"></script>
 </body>
 </html>
