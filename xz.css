@@ -463,7 +463,7 @@ margin: 20px auto; /* centers block horizontally */
   }
 
   .contact-links {
-    flex-direction: column; /* stack icons vertically */
+    flex-direction: row; /* stack icons vertically */
     gap: 15px;
   }
 
