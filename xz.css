@@ -462,13 +462,21 @@ margin: 20px auto; /* centers block horizontally */
     max-width: 90%;
   }
 
+  /* Keep contact icons horizontal and centered */
   .contact-links {
-    flex-direction: row; /* stack icons vertically */
+    flex-direction: row; /* horizontal row */
+    justify-content: center;
+    flex-wrap: wrap; /* wrap if needed */
     gap: 15px;
   }
 
   .contact-links a {
-    width: 80%; /* buttons full width */
+    width: auto; /* reset full width */
     text-align: center;
+    font-size: 2.5em; /* scale down icons slightly */
+  }
+
+  .contact-subtitle {
+    font-size: 1.5em; /* smaller “Let’s connect” */
   }
 }
