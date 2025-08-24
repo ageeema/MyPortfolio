@@ -59,7 +59,7 @@ const mainContent = document.getElementById('main-content');
 const loadingText = document.getElementById('loading-text');
 
 // Loader typewriter
-const loaderText = "Initializing Portfolio";
+const loaderText = "Initializing";
 let loaderIndex = 0;
 
 function typeLoaderText() {
@@ -74,7 +74,7 @@ function typeLoaderText() {
 typeLoaderText();
 
 // Hide loader after typing + extra delay
-const loaderDuration = loaderText.length * 150 + 4000; // typing + extra 4s
+const loaderDuration = loaderText.length * 150 + 2000; // typing + extra 4s
 setTimeout(() => {
   loader.classList.add('fade-out');
   loader.addEventListener('transitionend', () => {

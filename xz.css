@@ -5,11 +5,10 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background:black;
-  /* Removed background to let main BG show */
+  background: black;
 }
 
 /* ===============================
@@ -29,14 +28,43 @@ html, body {
   z-index: 9999;
   opacity: 1;
   transition: opacity 1s ease, visibility 1s ease;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-              url('Loading Background.png') no-repeat center center / cover;
+  background: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+              url('Loading Background.jpg') no-repeat center center / cover;
 }
 
 #loader.fade-out {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+/* Loader dots bouncing */
+#dots {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#dots span {
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: bounce 0.6s infinite alternate;
+}
+
+#dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+#dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-12px); }
 }
 
 /* Particles full screen */
@@ -60,33 +88,10 @@ html, body {
 }
 
 #loading-text {
-  font-family: 'Lobster', cursive;
-  font-size: 4em;
-  margin-bottom: 20px;
-  color: #f0f0f0;
-  text-shadow: 0 0 20px #ff6fff, 0 0 40px #6affff;
-}
-
-/* Dots */
-#dots span {
+  font-family: 'Roboto Slab', serif;
   font-size: 3em;
-  font-weight: bold;
-  color: #6affff;
-  text-shadow: 0 0 15px #ff6fff, 0 0 30px #6affff;
-  margin: 0 8px;
-  display: inline-block;
-  animation: bounce 1.2s infinite, glow 2s infinite alternate;
-}
-#dots span:nth-child(2) { animation-delay: 0.2s, 0.2s; }
-#dots span:nth-child(3) { animation-delay: 0.4s, 0.4s; }
-
-@keyframes bounce {
-  0%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-20px); }
-}
-@keyframes glow {
-  0%, 100% { text-shadow: 0 0 15px #6affff, 0 0 30px #ff6fff; }
-  50% { text-shadow: 0 0 25px #6affff, 0 0 50px #ff6fff; }
+  margin-bottom: 20px;
+  color: #111;
 }
 
 /* ===============================
@@ -101,7 +106,6 @@ html, body {
   z-index: 0;
 }
 
-/* Main content above particles */
 #main-content {
   position: relative;
   z-index: 1;
@@ -123,13 +127,11 @@ html, body {
 #intro-section {
   height: auto;
   min-height: 90vh;
-  padding: 60px 0;
-  padding-bottom: 50px;
+  padding: 60px 0 50px 0;
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
   background: url('Background.jpg') no-repeat center center / cover;
 }
 
@@ -147,140 +149,74 @@ html, body {
   width: 400px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 10px #6affff,
-              0 0 20px #6affff,
-              0 0 30px #ff6fff,
-              0 0 40px #ff6fff;
-  border: 4px solid #6affff;
-  transition: all 0.3s ease;
+  border: 4px solid transparent;
+  box-shadow: 
+    0 0 15px #6affff,
+    0 0 30px #ff6fff,
+    0 0 45px rgba(255,255,255,0.6);
+  transition: all 0.4s ease;
 }
+
 .intro-pic img:hover {
-  box-shadow: 0 0 15px #6affff,
-              0 0 30px #6affff,
-              0 0 45px #ff6fff,
-              0 0 60px #ff6fff;
   transform: scale(1.05);
+  box-shadow: 
+    0 0 20px #6affff,
+    0 0 40px #ff6fff,
+    0 0 60px rgba(255,255,255,0.8);
 }
 
 .intro-text h1 {
-  font-family: 'Lobster', cursive;
-  font-size: 5em;
-  font-weight: bold;
-  color: #6affff;
-  text-shadow: 0 0 5px #6affff,
-               0 0 10px #6affff,
-               0 0 20px #ff6fff,
-               0 0 40px #ff6fff,
-               0 0 60px #ff6fff;
+  font-family: 'Roboto Slab', serif;
+  font-size: 4.5em;
+  font-weight: 700;
+  color: #111;
   margin: 0;
   transition: all 0.3s ease;
 }
 
 .intro-text p {
   font-size: 1.8em;
-  font-weight: 600;
-  color: #e0e0e0;
+  font-weight: 400;
+  color: #333;
   margin-top: 0;
-  text-shadow: 0 0 5px #6affff, 0 0 10px #ff6fff;
 }
 
 /* ===============================
    Sections Styling
 =============================== */
 section {
-  padding:0 20px ; /* tighter spacing */
+  padding: 0 20px;
   margin: 0;
   text-align: center;
   background: transparent;
 }
 
-#about, #projects, #skills, #contact {
+#about, #projects, #skills, #experience, #contact {
   background: transparent;
-  color: #f5f5f5;
-}
-#about {
-  margin-top: 0;      /* remove section margin */
-  padding-top: 0;     /* remove extra padding */
+  color: #111;
 }
 
 section h2 {
+  font-family: 'Roboto Slab', serif;
   font-size: 3em;
   margin-bottom: 20px;
-  text-shadow: 0 0 10px #6affff, 0 0 20px #ff6fff;
-}
-/* Neon About Me Heading */
-#about h2 {
-  font-size: 3.5em;
-  color: #6affff; /* base neon color */
-  text-align: center;
-    margin-top: 0;      /* remove top margin */
-  padding-top:0;
-  text-shadow: 
-    0 0 5px #6affff,
-    0 0 10px #6affff,
-    0 0 20px #ff6fff,
-    0 0 40px #ff6fff,
-    0 0 60px #6affff,
-    0 0 80px #ff6fff;
-  animation: neon-flicker 2s infinite alternate;
-  font-family: 'Lobster', cursive; /* playful, glowing vibe */
+  color: #111;
+  letter-spacing: 1px;
 }
 
-@keyframes neon-flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    text-shadow: 
-      0 0 5px #6affff,
-      0 0 10px #6affff,
-      0 0 20px #ff6fff,
-      0 0 40px #ff6fff,
-      0 0 60px #6affff,
-      0 0 80px #ff6fff;
-  }
-  20%, 24%, 55% {
-    text-shadow: none; /* flicker effect */
-  }
-}
-
-/* About Me Paragraph Neon Style */
+/* About Me Paragraph */
 #about p {
-  font-size: 1.5em; /* increased from 1.2em */
-  color: #00ffff; /* neon cyan */
-  text-shadow: 
-    0 0 5px #00ffff,
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 40px #00ffff;
+  font-size: 1.5em;
+  color: #222;
   line-height: 1.8;
   max-width: 900px;
-margin: 20px auto; /* centers block horizontally */
+  margin: 20px auto;
   text-align: center;
-  transition: all 0.3s ease;
 }
 
-/* Optional hover effect for extra glow */
-#about p:hover {
-  text-shadow: 
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 30px #00ffff,
-    0 0 50px #00ffff;
-}
-
-
-#skills h2 {
-  font-family: 'Lobster', cursive;
-  font-size: 3em;
-  color: #00ffff; /* cyan neon */
-  text-shadow:
-    0 0 5px #00ffff,
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 40px #00ffff,
-    0 0 60px #00ffff;
-  margin-bottom: 20px;
-  animation: neon-flicker 2s infinite alternate; 
-}
-
+/* ===============================
+   Skills Section
+=============================== */
 #skills ul {
   list-style: none;
   padding: 0;
@@ -291,58 +227,101 @@ margin: 20px auto; /* centers block horizontally */
 }
 
 #skills li {
-  background: rgba(0, 255, 255, 0.1); /* translucent cyan */
+  background: rgba(255,255,255,0.07);
   padding: 12px 25px;
   border-radius: 50px;
   font-size: 1.2em;
   font-weight: 600;
-  color: #00ffff;
-  text-shadow:
-    0 0 5px #00ffff,
-    0 0 10px #00ffff,
-    0 0 20px #00ffff;
-  box-shadow:
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 30px #00ffff;
+  color: #111;
+  border: 2px solid rgba(106,255,255,0.4);
+  box-shadow: 0 0 10px rgba(255,111,255,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
 }
 
 #skills li:hover {
   transform: scale(1.1);
-  box-shadow:
-    0 0 15px #00ffff,
-    0 0 30px #00ffff,
-    0 0 45px #00ffff;
+  box-shadow: 0 0 15px rgba(106,255,255,0.4), 
+              0 0 25px rgba(255,111,255,0.3);
+}
+
+/* ===============================
+   Experience Section
+=============================== */
+#experience {
+  padding: 80px 20px;
+}
+
+#experience h2 {
+  font-size: 3.2em;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.experience-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.experience-card {
+  background: rgba(255,255,255,0.07);
+  padding: 25px;
+  max-width: 350px;
+  border-radius: 15px;
+  border: 2px solid rgba(106,255,255,0.4);
+  box-shadow: 0 0 15px rgba(255,111,255,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.experience-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(255,111,255,0.4), 
+              0 0 30px rgba(106,255,255,0.3);
+}
+
+.experience-card h3 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.experience-card p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #222;
+  margin: 5px 0;
 }
 
 /* ===============================
    Projects
 =============================== */
 .project-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255,255,255,0.07);
   margin: 20px auto;
   padding: 30px;
   max-width: 700px;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255,255,255,0.1);
-  transition: transform 0.3s ease, background 0.3s ease;
-  animation: neon-flicker 2s infinite alternate;
+  border: 2px solid rgba(106,255,255,0.4);
+  box-shadow: 0 0 12px rgba(255,111,255,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  background: rgba(255, 255, 255,0.1);
+  box-shadow: 0 0 18px rgba(106,255,255,0.4),
+              0 0 28px rgba(255,111,255,0.3);
 }
 
 .project-card h3 {
-  color: #6affff;
-  animation: neon-flicker 2s infinite alternate;
+  font-family: 'Roboto Slab', serif;
+  color: #111;
 }
 
 .project-card a {
-  color: #ff6fff;
+  color: #111;
   text-decoration: none;
   font-weight: bold;
 }
@@ -351,37 +330,24 @@ margin: 20px auto; /* centers block horizontally */
   text-decoration: underline;
 }
 
-
+/* ===============================
+   Contact Section
+=============================== */
 #contact {
   text-align: center;
   padding: 80px 20px;
-  background: transparent;
 }
 
 #contact h2 {
   font-size: 3.5em;
-  color: #6affff;
-  text-shadow: 
-    0 0 10px #6affff,
-    0 0 20px #ff6fff,
-    0 0 40px #6affff,
-    0 0 60px #ff6fff;
-  font-family: 'Lobster', cursive;
   margin-bottom: 10px;
-  animation: neon-flicker 2s infinite alternate;
 }
 
 .contact-subtitle {
   font-size: 2em;
-  color: #ff6fff;
-  text-shadow: 
-    0 0 10px #ff6fff,
-    0 0 20px #6affff,
-    0 0 30px #ff6fff;
+  color: #111;
   margin-bottom: 40px;
-  font-weight: bold;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 2px;
+  font-weight: 500;
 }
 
 .contact-links {
@@ -392,20 +358,15 @@ margin: 20px auto; /* centers block horizontally */
 }
 
 .contact-links a {
-  font-size: 3em;
-  color: #00ffff;
+  font-size: 2.5em;
+  color: #111;
   text-decoration: none;
   transition: all 0.3s ease;
-  text-shadow: 0 0 15px #00ffff, 0 0 25px #ff6fff;
 }
 
 .contact-links a:hover {
-  transform: scale(1.3) rotate(5deg);
-  color: #ff6fff;
-  text-shadow: 
-    0 0 20px #ff6fff,
-    0 0 40px #6affff,
-    0 0 60px #ff6fff;
+  transform: scale(1.2);
+  color: #555;
 }
 
 /* ===============================
@@ -444,6 +405,7 @@ margin: 20px auto; /* centers block horizontally */
     font-size: 1.2em;
   }     
 }
+
 @media(max-width:480px) {
   .intro-text h1 {
     font-size: 2em;
@@ -454,7 +416,7 @@ margin: 20px auto; /* centers block horizontally */
   }
 
   section h2 {
-    font-size: 2em; /* shrink big neon headings */
+    font-size: 2em;
   }
 
   .project-card {
@@ -462,21 +424,17 @@ margin: 20px auto; /* centers block horizontally */
     max-width: 90%;
   }
 
-  /* Keep contact icons horizontal and centered */
   .contact-links {
-    flex-direction: row; /* horizontal row */
+    flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap; /* wrap if needed */
     gap: 15px;
   }
 
   .contact-links a {
-    width: auto; /* reset full width */
-    text-align: center;
-    font-size: 2.5em; /* scale down icons slightly */
+    font-size: 2em;
   }
 
   .contact-subtitle {
-    font-size: 1.5em; /* smaller “Let’s connect” */
+    font-size: 1.5em;
   }
 }
