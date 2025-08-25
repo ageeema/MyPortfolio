@@ -209,6 +209,18 @@ html, body {
   50% { border-color: #6affff; }
 }
 
+/* ✅ Fix tagline overflow on phones */
+@media (max-width: 600px) {
+  .tagline {
+    white-space: normal;   /* allow wrapping */
+    display: block;
+    font-size: 1.2em;      /* smaller text */
+    width: auto;           /* no fixed typing width */
+    border-right: none;    /* remove blinking cursor */
+    animation: none;       /* disable typewriter on mobile */
+  }
+}
+
 /* ===============================
    Sections Styling
 =============================== */
