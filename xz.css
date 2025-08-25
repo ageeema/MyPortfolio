@@ -260,51 +260,100 @@ section h2::after {
   background: #111; /* Dark underline */
 }
 
-/* About Me */
+/* About Me Box */
 #about p {
+  background: linear-gradient(135deg, #9a9cff, #fad0c4); /* same colorful style */
+  padding: 25px;
+  border-radius: 15px;
   font-size: 1.5em;
   color: #222;
   line-height: 1.8;
   max-width: 900px;
   margin: 20px auto;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
-/* Skills */
+#about p:hover {
+  transform: translateY(-10px);
+}
+
+/* Skills container */
 #skills ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 30px;
   justify-content: center;
-  padding: 0;
   list-style: none;
+  padding: 0;
 }
 
+/* Each skill item */
 #skills li {
-  padding: 20px;
-  border-radius: 50%;
-  font-weight: 600;
-  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
   text-align: center;
-  min-width: 80px;
-  min-height: 80px;
+}
+
+/* Circle for icon */
+#skills li i {
+  font-size: 3em;
+  background: white;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
-/* Multicolored badges */
-#skills li:nth-child(1) { background: linear-gradient(135deg, #ff6f61, #ff9966); }
-#skills li:nth-child(2) { background: linear-gradient(135deg, #6a11cb, #2575fc); }
-#skills li:nth-child(3) { background: linear-gradient(135deg, #11998e, #38ef7d); }
-#skills li:nth-child(4) { background: linear-gradient(135deg, #ff512f, #dd2476); }
-#skills li:nth-child(5) { background: linear-gradient(135deg, #ff9a9e, #fad0c4); }
-#skills li:nth-child(6) { background: linear-gradient(135deg, #f7971e, #ffd200); }
+/* Language name */
+#skills li span {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #111;
+}
 
-#skills li:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+/* Hover effects */
+#skills li:hover i {
+  transform: scale(1.2) rotate(5deg);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4),
+              0 0 30px rgba(255,255,255,0.6);
+}
+
+/* Different colors for logos */
+#skills li:nth-child(1) i { color: #e34c26; } /* HTML */
+#skills li:nth-child(2) i { color: #264de4; } /* CSS */
+#skills li:nth-child(3) i { color: #f0db4f; } /* JS */
+#skills li:nth-child(4) i { color: #3776ab; } /* Python */
+#skills li:nth-child(5) i { color: #b07219; } /* Java */
+#skills li:nth-child(6) i { color: #61dbfb; } /* React */
+/* Custom C logo */
+.c-logo {
+  font-size: 2.5em;
+  font-weight: bold;
+  background: white;
+  color: #00599C;  /* C blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.c-logo:hover {
+  transform: scale(1.2) rotate(5deg);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4),
+              0 0 30px rgba(0, 89, 156, 0.6);
 }
 
 /* Experience Section */
@@ -444,4 +493,4 @@ section h2::after {
   .contact-links { gap: 15px; }
   .contact-links a { font-size: 2em; }
   .contact-subtitle { font-size: 1.5em; }
-}
+} 
